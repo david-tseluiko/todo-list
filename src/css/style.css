@@ -7,6 +7,8 @@
     --text: #ffffff;
     --sidebar-text: #d1d1d1;
     --description: #cccccc;
+    --active-button-bgc: #472525;
+    --active-button-text: #f07f75;
 }
 
 body {
@@ -17,4 +19,59 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     font-size: 16px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 5.5fr;
+
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.sidebar {
+    background-color: var(--sidebar);
+    height: 100%;
+    padding: 15px;
+}
+
+.sidebar__title {
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.button {
+    min-width: 100%;
+    text-align: left;
+    padding: 5px 7px;
+    background-color: transparent;
+    color: var(--text);
+    font-size: 16px;
+    border-radius: 4px;
+    transition: 0.1s ease all;
+}
+
+.sidebar__button {
+    margin-bottom: 4px;
+    display: flex;
+}
+
+.sidebar__button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav__button:hover {
+    background-color: rgba(255, 255, 0, 0.05);
+}
+
+.nav__button--active,
+.nav__button--active:hover {
+    background-color: var(--active-button-bgc);
+    color: var(--active-button-text);
 }
