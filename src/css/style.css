@@ -1,1 +1,20 @@
 @import url("./reset.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+    --main: #1f1f1f;
+    --sidebar: #262626;
+    --text: #ffffff;
+    --sidebar-text: #d1d1d1;
+    --description: #cccccc;
+}
+
+body {
+    background-color: var(--main);
+    color: var(--text);
+
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 16px;
+}
