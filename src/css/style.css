@@ -9,6 +9,9 @@
     --description: #cccccc;
     --active-button-bgc: #472525;
     --active-button-text: #f07f75;
+    --form-bgc: #262626;
+    --form-submit-button: #d04348;
+    --form-cancel-button: #3f3f3f;
 }
 
 body {
@@ -19,6 +22,63 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     font-size: 16px;
+
+    position: relative;
+}
+
+.form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: -80px;
+
+    display: flex;
+    flex-direction: column;
+    background-color: var(--form-bgc);
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 500px;
+}
+
+.form__label {
+    margin-bottom: 7px;
+}
+
+.form__input {
+    background-color: transparent;
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.form__input:focus {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.form-button {
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.form__button-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.form__cancel {
+    background-color: var(--form-cancel-button);
+    color: var(--text);
+}
+
+.form__submit {
+    background-color: var(--form-submit-button);
+    color: var(--text);
 }
 
 .wrapper {
