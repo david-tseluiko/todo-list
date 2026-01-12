@@ -1,1 +1,25 @@
 @import url("./reset.css");
+
+#projectDialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+}
+
+.side__form {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    background-color: #d5c9c9;
+    width: 200px;
+    height: auto;
+    padding: 20px;
+}
+
+.form__button-container {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 5px;
+} 
