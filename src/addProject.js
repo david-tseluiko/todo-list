@@ -37,7 +37,7 @@ function isDuplicateName() {
     const input = document.querySelector(".form__input");
 
     for (let project of Array.from(previousProjects.children)) {
-        if (project.textContent == input.value) {
+        if (project.textContent.toLowerCase() == input.value.toLowerCase()) {
             input.setCustomValidity("This project name already exists.");
             return false;
         }

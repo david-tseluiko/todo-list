@@ -38,6 +38,21 @@ export default function createDOM() {
         return [addProject, projects];
     }
 
+    (function firstProject() {
+        const projectsList = document.querySelector(".side__projects");
+        const input = document.querySelector(".form__input");
+
+        const li = document.createElement("li");
+        li.className = "projects__item";
+
+        const button = document.createElement("button");
+        button.className = "projects__button";
+        button.textContent = "Inbox";
+
+        li.append(button);
+        projectsList.append(li);
+    })();
+
     (function addProjectFormModal() {
         const side = document.querySelector(".side");
 
@@ -75,5 +90,23 @@ export default function createDOM() {
         form.append(nameLabel, nameInput, buttonContainer);
         dialog.append(form);
         side.append(dialog);
+    })();
+
+    (function projectPage() {
+        const main = document.querySelector(".main");
+
+        const project = document.createElement("div");
+        project.className = "project";
+
+        const title = document.createElement("h2");
+        title.className = "project__title";
+        title.textContent = "Inbox";
+
+        const createTodoButton = document.createElement("button");
+        createTodoButton.className = "project__button";
+        createTodoButton.textContent = "Add Todo";
+
+        project.append(title, createTodoButton);
+        main.append(project);
     })();
 }
