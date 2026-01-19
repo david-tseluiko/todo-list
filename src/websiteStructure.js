@@ -106,7 +106,69 @@ export default function createDOM() {
         createTodoButton.className = "project__button";
         createTodoButton.textContent = "Add Todo";
 
-        project.append(title, createTodoButton);
+        const todoList = document.createElement("ul");
+        todoList.className = "project__list list";
+
+        project.append(title, createTodoButton, todoList);
         main.append(project);
+    })();
+
+     (function addTodoFormModal() {
+        const main = document.querySelector(".main");
+
+        const dialog = document.createElement("dialog");
+        dialog.id = "todoDialog";
+
+        const form = document.createElement("form");
+        form.className = "main__form form";
+        form.method = "dialog";
+
+        const nameLabel = document.createElement("label");
+        nameLabel.className = "form__name";
+        nameLabel.textContent = "Task Name: ";
+        nameLabel.setAttribute("for", "todoName");
+
+        const nameInput = document.createElement("input");
+        nameInput.className = "form__name-input";
+        nameInput.id = "todoName";
+        nameInput.required = true;
+
+        const descriptionLabel = document.createElement("label");
+        descriptionLabel.className = "form__description";
+        descriptionLabel.textContent = "Description: ";
+        descriptionLabel.setAttribute("for", "description");
+
+        const descriptionInput = document.createElement("input");
+        descriptionInput.className = "from__description-input";
+        descriptionInput.id = "description";
+
+        const dueLabel = document.createElement("label");
+        dueLabel.className = "form__due-date";
+        dueLabel.textContent = "Due date: ";
+        dueLabel.setAttribute("for", "due-date");
+
+        const dueInput = document.createElement("input");
+        dueInput.className = "form__due-date-input";
+        dueInput.type = "date";
+        dueInput.id = "due-date";
+        dueInput.required = true;
+
+        const buttonContainer = document.createElement("div");
+        buttonContainer.className = "form__button-container";
+
+        const cancelButton = document.createElement("button");
+        cancelButton.className = "form__button cancel";
+        cancelButton.textContent = "Cancel";
+        cancelButton.type = "button";
+
+        const addButton = document.createElement("button");
+        addButton.className = "form__button add";
+        addButton.textContent = "Add";
+        addButton.type = "submit";
+
+        buttonContainer.append(cancelButton, addButton);
+        form.append(nameLabel, nameInput, descriptionLabel, descriptionInput, dueLabel, dueInput, buttonContainer);
+        dialog.append(form);
+        main.append(dialog);
     })();
 }

@@ -16,6 +16,7 @@ function closeModal() {
 
     modal.close();
     cancelButton.removeEventListener("click", closeModal);
+    clearForm();
 
     console.log("cancel executed");
 }

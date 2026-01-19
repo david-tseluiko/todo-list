@@ -5,14 +5,14 @@
     grid-template-columns: 1fr 5fr;
 }
 
-#projectDialog {
+dialog {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -90%);
 }
 
-.side__form {
+.form {
     display: flex;
     gap: 5px;
     flex-direction: column;
